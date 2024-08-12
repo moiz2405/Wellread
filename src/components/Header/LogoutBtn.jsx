@@ -10,8 +10,10 @@ function LogoutBtn() {
     const logoutHandler = () => {
         authService.logout().then(() => {
             dispatch(logout()); 
+            toast.success(successMsg);
+            navigate('/login');
         });
-        toast.success(successMsg);
+        
     }
     
   return (
